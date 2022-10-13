@@ -47,6 +47,14 @@
   }
   .header .double #free {
     margin-top: 140px;
+    font-family: "FreeScript";
+    color: #00c8ff;
+    text-shadow: -5px 2px #7a4e1f;
+    transform: rotate(-6deg);
+    margin-left: 95px;
+    display: inline-block;
+    text-align: left;
+    letter-spacing: 2px;
   }
   .header .double p {
     margin-left: 120px;

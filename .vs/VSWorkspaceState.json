@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\assets",
     "\\components",
     "\\pages"
   ],
-  "SelectedNode": "\\assets",
+  "SelectedNode": "\\assets\\go-for-eat.svg",
   "PreviewInSolutionExplorer": false
 }

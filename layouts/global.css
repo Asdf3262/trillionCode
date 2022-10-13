@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "FreeScript";
+  src: local("FreeScript"), url(~assets/FreeScript-Bold.woff) format("woff");
+}
+
