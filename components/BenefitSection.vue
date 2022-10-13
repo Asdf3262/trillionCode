@@ -1,22 +1,160 @@
 <template>
-  <div class="benefits">
-    <h3>{{ title }}</h3>
+  <div :class="'benefits' + bgColor">
+    <h3 class="title">{{ title }}</h3>
     <div class="details">
       <img :src="boxImage" alt="svg" />
-      <p>{{ card }}</p>
+      <p class="card">{{ card }}</p>
       <h4>{{ boxTitle }}</h4>
-      <p>{{ intro }}</p>
+      <p class="intro">{{ intro }}</p>
       <p class="tax">{{ taxes }}</p>
       <h5>BENEFITS</h5>
       <ul>
-        <li>Order & load cards online in seconds, download invoices & reports in a click</li>
+        <li v-for="item in items">
+          {{ item.message }}
+        </li>
       </ul>
+      <div class="contact">
+        <CoolButton :text="btn" />
+      </div>
+    </div>
+    <div class="benefits-bg">
+      <img :src="bgImage"/>
     </div>
   </div>
 </template>
 
 <script>
+  import CoolButton from '@/components/CoolButton'
   export default {
-    props: ['title', 'card', 'intro', 'taxes', 'boxTitle', 'boxImage', 'bgImage']
+    props: {
+      title: String,
+      card: String,
+      intro: String,
+      taxes: String,
+      boxTitle: String,
+      boxImage: String,
+      bgImage: String,
+      bgColor: String,
+      btn: String,
+      items: Object
+    },
+    components: {
+      CoolButton
+    }
   }
 </script>
+
+<style>
+  .benefits {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    position: relative;
+  }
+  .title {
+    font-family: "FreeScript";
+    color: #00c8ff;
+    text-shadow: -5px 2px #7a4e1f;
+    transform: rotate(-5deg);
+    max-width: 500px;
+    text-align: left;
+    margin-left: 120px;
+    margin-bottom: 30px;
+  }
+  .details {
+    max-width: 800px;
+    position: relative;
+    padding-bottom: 70px;
+    background-color: #fff;
+    border: 8px solid rgb(48,54,68);
+    border-radius: 50px;
+    border-top: 4px solid rgb(48,54,68);
+    border-right: 4px solid rgb(48,54,68);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    margin-left: 120px;
+    z-index: 1;
+  }
+  .details p, .details h4, .details h5 {
+    color: #303644;
+  }
+  .details h4 {
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 38px;
+    max-width: 540px;
+  }
+  .details .intro {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .details .card {
+    background-color: #fd9e19;
+    border-radius: 30px;
+    display: inline-block;
+    color: #fff;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 40px;
+  }
+  .tax {
+    background-color: #f0f0f0;
+    font-size: 14px;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 12px;
+    display: inline-block;
+  }
+  .details h5 {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .details ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 20px;
+  }
+  .details ul li {
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #303644d4;
+  }
+  .details ul li:before {
+    content: '✓';
+    color: #03c9ff;
+    margin-right: 10px;
+    border: 2px solid #303644;
+    border-radius: 50%;
+    padding: 1px;
+  }
+  .details button.cool {
+    color: #fff;
+    text-align: right;
+  }
+  .details .contact {
+    position: absolute;
+    bottom: -8px;
+    right: -4px;
+  }
+  .details .contact p {
+    margin: 0;
+  }
+  .details .contact p button {
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px 0 40px 0;
+    border-right: 4px solid rgb(48,54,68);
+  }
+  .benefits-bg {
+    position: absolute;
+    top: 200px;
+    top: 55%;
+    transform: translateY(-50%);
+  }
+  .benefits-bg img {
+    max-width: 600px;
+  }
+</style>

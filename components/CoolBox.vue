@@ -53,11 +53,14 @@
     padding: 5px;
     margin: 0;
   }
+  .thecoolbox .bottomButton p {
+      padding-bottom: 0;
+  }
   .thecoolbox .bottomButton {
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    bottom: 0;
+    bottom: -4px;
     left: 0;
     right: 0;
     transition: all 0.4s linear;
@@ -70,7 +73,9 @@
   }
   .thecoolbox button.cool {
     border-radius: 20px 20px 0 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 8px 30px 8px 30px;
+    background-color: #ffce3c;
+    border-width: 4px;
+    font-size: 14px;
   }
 </style>
