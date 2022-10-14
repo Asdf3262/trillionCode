@@ -2,20 +2,26 @@
   <div class="tesmonials">
     <h3>Testimonials</h3>
     <p>Need even more convincing?</br>Here is what our customers say about us</p>
-    <div class="tests">
+    <div class="testimonial-wrapper">
       <p v-if="$fetchState.pending">Fetching testimonials...</p>
       <p v-else-if="$fetchState.error">An error occurred :(</p>
       <div v-else class="testimonial-container">
-        <div v-for="testimonial in testimonials.slice(currentIndex,currentIndex+itemsPerView)" class="testimonial-box">
-          <p>"{{ testimonial.body }}"</p>
-          <div class="user">
-            <img src="~/assets/avatar-1.png" alt="avatar" />
-            <div class="user-dets">
-              <h5>{{ testimonial.email }}</h5>
-              <p>CEO of Lorem Ipsum</p>
+        <b-container>
+          <b-row>
+            <div v-for="testimonial in testimonials" class="col-xl-6 ">
+              <div class="testimonial-box">
+                <p>"{{ testimonial.body }}"</p>
+                <div class="user">
+                  <img src="~/assets/avatar-1.png" alt="avatar" />
+                  <div class="user-dets">
+                    <h5>User ID: {{ testimonial.userId }}</h5>
+                    <p>CEO of Lorem Ipsum</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </b-row>
+        </b-container>
       </div>
       <div class="nav">
         <button @click="onClickPrevious"><</button>
@@ -35,35 +41,29 @@
     data() {
       return {
         testimonials: [],
-        currentIndex: 0,
+        currentPage: 1,
         itemsPerView: 2
       }
     },
     async fetch() {
       this.testimonials = await fetch(
-        'https://jsonplaceholder.typicode.com/posts/1/comments'
+        'https://jsonplaceholder.typicode.com/posts/?_page=' + this.currentPage + '&_limit=' + this.itemsPerView
       ).then(res => res.json())
     },
     methods: {
       onClickNext: function () {
-        if (this.currentIndex + 2 <= this.testimonials.length) {
-          this.currentIndex += this.itemsPerView
-        }
+        this.currentPage += 1
       },
       onClickPrevious: function () {
-        if (this.currentIndex - 2 >= 0) {
-          this.currentIndex -= this.itemsPerView
-        }
-      }
-    },
-    computed: {
-      returnTestimonials: function () {
-        return this.testimonials.slice(0,2)
+        this.currentPage -= 1
       }
     },
     props: {
       logoUrls: Array
-    }
+    },
+    watch: {
+      'currentPage': '$fetch'
+    },
   }
 </script>
 
@@ -83,22 +83,20 @@
     font-size: 18px;
     letter-spacing: 1px;
   }
-  .tests {
-      text-align: center;
+  .testimonial-wrapper {
+    text-align: center;
+    min-height: 505px;
+    padding-top: 20px;
   }
   .testimonial-container {
-    display: flex;
-    justify-content: center;
     margin-bottom: 20px;
     min-height: 430px;
   }
   .testimonial-box {
     background-color: #fff;
     padding: 40px;
-    max-width: 600px;
     border-radius: 25px;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-bottom: 20px;
   }
   .testimonial-box p {
     color: #787878;
@@ -106,16 +104,14 @@
     margin-top: 0; 
   }
   .user {
-    display: inline-block;
+    display: block;
     margin-top: 30px;
-    float: left;
   }
   .user img {
     float: left;
   }
   .user .user-dets {
-    margin-left: 20px;
-    float: right;
+    margin-left: 85px;
     padding-top: 8px;
   }
   .user h5 {

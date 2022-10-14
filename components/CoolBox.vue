@@ -3,7 +3,7 @@
     <img :src="imagesrc" alt="svg" />
     <p>{{ title }}</p>
     <img :src="bgImage" alt="png" />
-    <div class="bottomButton">
+    <div class="learnMoreBtn">
       <CoolButton text="LEARN MORE" :parents="btnParents" :goTo="btnGoTo"/>
     </div>
   </b-col>
@@ -58,10 +58,10 @@
     padding: 5px;
     margin: 0;
   }
-  .thecoolbox .bottomButton p {
-      padding-bottom: 0;
+  .thecoolbox .learnMoreBtn p {
+    padding-bottom: 0;
   }
-  .thecoolbox .bottomButton {
+  .thecoolbox .learnMoreBtn {
     position: absolute;
     opacity: 0;
     visibility: hidden;
@@ -71,7 +71,7 @@
     transition: all 0.4s linear;
     margin-bottom: 10px;
   }
-  .thecoolbox:hover .bottomButton {
+  .thecoolbox:hover .learnMoreBtn {
     opacity: 1;
     visibility: visible;
     margin-bottom: 0;

@@ -5,21 +5,21 @@
       <form onsubmit="console.log('Submit Successful');">
         <b-container>
           <b-row>
-            <b-col xl="2">
+            <b-col xl="6">
               <label for="fullname">Name & Surname</label>
               <input type="text" id="fullname" name="fullname" placeholder="Your full name.." required>
             </b-col>
-            <b-col xl="2">
+            <b-col xl="6">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" placeholder="Your email.." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
             </b-col>
           </b-row>
           <b-row>
-            <b-col xl="2">
+            <b-col xl="6">
               <label for="phone">Phone</label>
               <input type="tel" id="phone" name="phone" placeholder="69xxxxxxxx" pattern="[0-9]{10}" required>
             </b-col>
-            <b-col xl="2" class="products">
+            <b-col xl="6" class="products">
               <label for="product">Product</label>
               <select id="product" name="product" required>
                 <option value="product1">Product1</option>
@@ -45,7 +45,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
   .contact-us {
     padding: 80px 0 60px 0;
     background-color: #00c8ff;
@@ -61,22 +61,26 @@
   .contact-us .row {
     margin-bottom: 50px;
   }
-  .contact-us .row div {
-    margin-left: 100px;
-    margin-right: 100px;
-  }
   form {
     margin-top: 50px;
   }
   label {
     font-weight: bold;
+    display: block;
+  }
+  input, select {
+    width: 100%;
+  }
+  .check input, .check label {
+    display: inline-block;
+    width: auto;
+  }
+  .submits input {
+    width: auto;
   }
   .container {
-    max-width: 100%;
-  }
-  .products {
-    display: flex;
-    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
   }
   input, select {
     border: 8px solid rgb(48,54,68);

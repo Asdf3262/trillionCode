@@ -1,5 +1,5 @@
 <template>
-  <div :class="'benefits' + bgColor">
+  <div :class="'benefits' + alignment">
     <h3 class="title">{{ title }}</h3>
     <div class="details">
       <img :src="boxImage" alt="svg" />
@@ -34,7 +34,7 @@
       boxTitle: String,
       boxImage: String,
       bgImage: String,
-      bgColor: String,
+      alignment: String,
       btn: String,
       items: Array
     },
@@ -49,6 +49,29 @@
     padding-top: 100px;
     padding-bottom: 80px;
     position: relative;
+  }
+  .left {
+    background-color: #f9bb32;
+  }
+  .left .benefits-bg {
+    right: 0;
+  }
+  .right {
+    background-color: #ee5a5a;
+  }
+  .right h3 {
+    margin-left: auto;
+    margin-right: 5px;
+  }
+  .right .details {
+    margin-left: auto;
+    margin-right: 120px;
+  }
+  .left button.cool {
+    background-color: #fd9e19;
+  }
+  .right button.cool {
+    background-color: #ee5a5a;
   }
   .title {
     font-family: "FreeScript";
