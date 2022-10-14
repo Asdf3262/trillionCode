@@ -26,7 +26,8 @@
                     taxes="Tax exemption: 300 euros per year per employee"
                     boxTitle="Everything you desire in a single tap" bgColor=" benefits2" :bgImage="require('~/assets/upgift.png')"
                     btn="TELL ME MORE" :items="items2"/>
-    <Testimonials/>
+    <Testimonials :logoUrls="testimonialLogos"/>
+    <ContactSection/>
   </main>
 </template>
 
@@ -34,11 +35,13 @@
   import CoolBox from '@/components/CoolBox'
   import BenefitSection from '@/components/BenefitSection'
   import Testimonials from '@/components/Testimonials'
+  import ContactSection from '@/components/ContactSection'
   export default {
     components: {
       CoolBox,
       BenefitSection,
-      Testimonials
+      Testimonials,
+      ContactSection
     },
     data() {
       return {
@@ -52,6 +55,16 @@
           { message: 'Order & load cards online in seconds, download invoices & reports in a click' },
           { message: 'Buy everything you want - electronics, clothing, cosmetics and so much more' },
           { message: 'Our app is loaded with crazy-fun features' }
+        ],
+        testimonialLogos: [
+          { imageUrl: require('~/assets/logo-1.svg') },
+          { imageUrl: require('~/assets/logo-2.svg') },
+          { imageUrl: require('~/assets/logo-3.svg') },
+          { imageUrl: require('~/assets/logo-4.svg') },
+          { imageUrl: require('~/assets/logo-5.svg') },
+          { imageUrl: require('~/assets/logo-6.svg') },
+          { imageUrl: require('~/assets/logo-7.svg') },
+          { imageUrl: require('~/assets/logo-8.svg') }
         ]
       }
     }
