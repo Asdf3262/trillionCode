@@ -1,8 +1,8 @@
 <template>
-  <div class="contact-us">
+  <div ref="contact" class="contact-us">
     <h3>I am interested in getting the benefits of <span>Up Hellas</span></h3>
     <div>
-      <form action="action_page.php">
+      <form onsubmit="console.log('Submit Successful');">
         <b-container>
           <b-row>
             <b-col xl="2">
@@ -17,7 +17,7 @@
           <b-row>
             <b-col xl="2">
               <label for="phone">Phone</label>
-              <input type="text" id="phone" name="phone" placeholder="Your phone.." required>
+              <input type="tel" id="phone" name="phone" placeholder="69xxxxxxxx" pattern="[0-9]{10}" required>
             </b-col>
             <b-col xl="2" class="products">
               <label for="product">Product</label>

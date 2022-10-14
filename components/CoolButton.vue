@@ -1,10 +1,37 @@
 <template>
-  <p><button class="cool">{{ text }}</button></p>
+  <p><button @click="goto" class="cool">{{ text }}</button></p>
 </template>
 
 <script>
   export default {
-    props: ['text', 'styles']
+    props: {
+      text: String,
+      styles: String,
+      goTo: String,
+      parents: String
+    },
+    methods: {
+      goto() {
+        if (this.goTo) {
+          if (this.parents === '2') {
+
+            var element = this.$parent.$parent.$refs[this.goTo];
+            var top = element.offsetTop;
+
+            window.scrollTo(0, top);
+          }
+          else {
+            var element = this.$parent.$refs[this.goTo];
+            var top = element.offsetTop + 120;
+
+            window.scrollTo(0, top);
+          }
+        }
+        else {
+          console.log('No target in this button!')
+        }
+      }
+    }
   }
 </script>
 

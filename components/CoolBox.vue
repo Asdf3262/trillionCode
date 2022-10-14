@@ -4,7 +4,7 @@
     <p>{{ title }}</p>
     <img :src="bgImage" alt="png" />
     <div class="bottomButton">
-      <CoolButton text="LEARN MORE" />
+      <CoolButton text="LEARN MORE" :parents="btnParents" :goTo="btnGoTo"/>
     </div>
   </b-col>
 </template>
@@ -15,7 +15,13 @@
     components: {
       CoolButton
     },
-    props: ['imagesrc', 'title', 'bgImage']
+    props: {
+      imagesrc: String,
+      title: String,
+      bgImage: String,
+      btnParents: String,
+      btnGoTo: String
+     }
   }
 </script>
 
@@ -40,7 +46,6 @@
     border: 8px solid rgb(48,54,68);
     border-top: 4px solid rgb(48,54,68);
     border-right: 4px solid rgb(48,54,68);
-    cursor: pointer;
   }
   .thecoolbox img {
     width: 100%;

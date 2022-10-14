@@ -14,7 +14,7 @@
         </li>
       </ul>
       <div class="contact">
-        <CoolButton :text="btn" />
+        <CoolButton :text="btn" goTo="contact" parents="2"/>
       </div>
     </div>
     <div class="benefits-bg">
@@ -36,7 +36,7 @@
       bgImage: String,
       bgColor: String,
       btn: String,
-      items: Object
+      items: Array
     },
     components: {
       CoolButton

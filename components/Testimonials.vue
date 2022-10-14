@@ -62,7 +62,7 @@
       }
     },
     props: {
-      logoUrls: Object
+      logoUrls: Array
     }
   }
 </script>

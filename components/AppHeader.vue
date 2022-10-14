@@ -9,14 +9,14 @@
           <img src="~/assets/5-badge.svg" alt="5-badge">
           <p id="free">HERE'S A </br>CRAZY THOUGHT</p>
           <p id="happy">Happy and healthy employees work </br>better!</p>
-          <CoolButton text="FIND OUT HOW WE CAN HELP"/>
+          <CoolButton parents="1" goTo="endOfHeader" text="FIND OUT HOW WE CAN HELP"/>
         </b-col>
         <b-col class="double">
           <img src="../assets/banner-image.png" alt="banner">
         </b-col>
       </b-row>
     </b-container>
-    <p id="scroll">SCROLL FOR MORE <i class="arrow down"></i></p>
+    <p ref="endOfHeader" id="scroll">SCROLL FOR MORE <i class="arrow down"></i></p>
   </header>
 </template>
 

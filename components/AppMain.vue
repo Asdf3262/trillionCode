@@ -5,9 +5,9 @@
     <b-container fluid>
       <b-row>
         <CoolBox :imagesrc="require('~/assets/go-for-eat.svg')" title="The unrivaled meal card solution"
-                 :bgImage="require('~/assets/goforeat.png')" />
+                 :bgImage="require('~/assets/goforeat.png')" btnGoTo="up-eat" btnParents="2"/>
         <CoolBox :imagesrc="require('~/assets/UP-GIFT.svg')" title="The perfect gift"
-                 :bgImage="require('~/assets/upgift.png')" />
+                 :bgImage="require('~/assets/upgift.png')" btnGoTo="gift" btnParents="2"/>
         <CoolBox :imagesrc="require('~/assets/up-cheque.svg')" title="Where it all started; our meal vouchers"
                  :bgImage="require('~/assets/3.png')" />
         <CoolBox :imagesrc="require('~/assets/up-holidays.svg')" title="The card that takes you places"
@@ -16,18 +16,24 @@
                  :bgImage="require('~/assets/5.png')" />
       </b-row>
     </b-container>
-    <BenefitSection title="THE UNRIVALED MEAL CARD SOLUTION" :boxImage="require('~/assets/go-for-eat.svg')"
-                    card="MEAL CARD" intro="Our prepaid meal card by Mastercard is designed to offer to both our corporate
+    <div ref="up-eat">
+      <BenefitSection title="THE UNRIVALED MEAL CARD SOLUTION" :boxImage="require('~/assets/go-for-eat.svg')"
+                      card="MEAL CARD" intro="Our prepaid meal card by Mastercard is designed to offer to both our corporate
                     customers and users an umatched experience that's simple and fun" taxes="Tax exemption: 6 euros per day / 1,452
                     euros per year per employee" boxTitle="Enjoy your meals anywhere you want" bgColor=" benefits1"
-                    :bgImage="require('~/assets/goforeat.png')" btn="CONTACT US" :items="items1"/>
-    <BenefitSection title="THE PERFECT GIFT" :boxImage="require('~/assets/UP-GIFT.svg')"
-                    card="GIFT CARD" intro="Our reloadable gift card is the perfect gift to reward, to incentivise, to celebrate!"
-                    taxes="Tax exemption: 300 euros per year per employee"
-                    boxTitle="Everything you desire in a single tap" bgColor=" benefits2" :bgImage="require('~/assets/upgift.png')"
-                    btn="TELL ME MORE" :items="items2"/>
+                      :bgImage="require('~/assets/goforeat.png')" btn="CONTACT US" :items="items1" />
+    </div>
+    <div ref="gift">
+      <BenefitSection title="THE PERFECT GIFT" :boxImage="require('~/assets/UP-GIFT.svg')"
+                      card="GIFT CARD" intro="Our reloadable gift card is the perfect gift to reward, to incentivise, to celebrate!"
+                      taxes="Tax exemption: 300 euros per year per employee"
+                      boxTitle="Everything you desire in a single tap" bgColor=" benefits2" :bgImage="require('~/assets/upgift.png')"
+                      btn="TELL ME MORE" :items="items2" />
+    </div>
     <Testimonials :logoUrls="testimonialLogos"/>
-    <ContactSection/>
+    <div ref="contact">
+      <ContactSection />
+    </div>
   </main>
 </template>
 
