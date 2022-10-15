@@ -29,7 +29,7 @@
             </b-col>
           </b-row>
           <b-row class="check">
-            <input type="checkbox" id="data" name="data" value="Data">
+            <input type="checkbox" id="data" name="data" value="Data" required>
             <label for="data"> Επιθυμώ να χρησιμοποιηθούν τα παραπάνω στοιχεία μου από την Up Hellas, προκειμένου να ενημερωθώ για τα προϊόντα της,
               βάσει και του Γενικού Κανονισμού για την Προστασία Προσοπικών Δεδομένων που ισχύει από 25/5/2018</label>
           </b-row>
