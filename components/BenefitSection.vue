@@ -180,4 +180,13 @@
   .benefits-bg img {
     max-width: 600px;
   }
+
+  @media only screen and (max-width: 991px) {
+    .benefits-bg img {
+        display: none;
+    }
+    .benefits .details {
+      margin: auto;
+    }
+  }
 </style>

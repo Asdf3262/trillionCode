@@ -3,7 +3,7 @@
     <h3>Happy & healthy employees work better</h3>
     <p>We are Up. We design and deliver digital-first employee benefits that transform the workplace experience.</p>
     <b-container fluid>
-      <b-row>
+      <b-row class="row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
         <CoolBox :imagesrc="require('~/assets/go-for-eat.svg')" title="The unrivaled meal card solution"
                  :bgImage="require('~/assets/goforeat.png')" btnGoTo="up-eat" btnParents="2"/>
         <CoolBox :imagesrc="require('~/assets/UP-GIFT.svg')" title="The perfect gift"
@@ -103,5 +103,10 @@
     padding: 20px;
     margin-top: 60px;
     padding-bottom: 100px;
+  }
+  @media only screen and (max-width: 991px) {
+      main {
+          padding-top: 30px;
+      }
   }
 </style>

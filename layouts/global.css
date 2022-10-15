@@ -1,5 +1,17 @@
 @font-face {
   font-family: "FreeScript";
-  src: local("FreeScript"), url(~assets/FreeScript-Bold.woff) format("woff");
+  src: local("FreeScript"), url(~assets/fonts/FreeScript-Bold.woff) format("woff");
 }
-
+@font-face {
+  font-family: "WebFont";
+  font-weight: 600;
+  src: local("WebFont"), url(~assets/fonts/cfastystd-bold-webfont.woff) format("woff");
+}
+@font-face {
+  font-family: "WebFont";
+  font-weight: 400;
+  src: local("WebFont"), url(~assets/fonts/cfastystd-light-webfont.woff) format("woff");
+}
+h1, h2, h3, h4, h5, h6, p {
+    font-family: "WebFont";
+}

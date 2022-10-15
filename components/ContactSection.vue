@@ -36,7 +36,7 @@
           <b-row class="submits">
             <input type="submit" value="SEND US YOUR MESSAGE">
             <span>OR</span>
-            <input type="submit" value="SCHEDULE A MEETING">
+            <div class="meeting"><input type="submit" value="SCHEDULE A MEETING"></div>
           </b-row>
         </b-container>
 
@@ -104,11 +104,29 @@
     font-size: 12px;
     margin-left: 30px;
   }
-  .submits input:first-child {
+  .submits input {
     background-color: #ffce3c;
+  }
+  .meeting {
+      position: relative;
+  }
+  .submits .meeting input {
+      background-color: #fff;
+      padding-left: 54px;
   }
   .submits span {
     margin: auto 20px auto 20px;
     font-weight: bold;
+  }
+  .meeting::before {
+    content: '';
+    background: url('~/assets/meeting-logo.svg');
+    position: absolute;
+    width: 32px;
+    z-index: 100000;
+    height: 34px;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-57%);
   }
 </style>

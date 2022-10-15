@@ -8,7 +8,7 @@
       <div v-else class="testimonial-container">
         <b-container>
           <b-row>
-            <div v-for="testimonial in testimonials" class="col-xl-6 ">
+            <div v-for="testimonial in testimonials" class="col-sm-12 col-xl-6 ">
               <div class="testimonial-box">
                 <p>"{{ testimonial.body }}"</p>
                 <div class="user">

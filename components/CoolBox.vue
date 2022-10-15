@@ -1,5 +1,5 @@
 <template>
-  <b-col class="thecoolbox" xl="3">
+  <b-col class="thecoolbox col">
     <img :src="imagesrc" alt="svg" />
     <p>{{ title }}</p>
     <img :src="bgImage" alt="png" />
@@ -41,11 +41,13 @@
     padding-right: 5px;
     margin-right: 15px;
     margin-bottom: 20px;
+    transition: all 0.2s linear;
   }
   .thecoolbox:hover {
     border: 8px solid rgb(48,54,68);
     border-top: 4px solid rgb(48,54,68);
     border-right: 4px solid rgb(48,54,68);
+    background-color: #fff;
   }
   .thecoolbox img {
     width: 100%;
@@ -57,6 +59,7 @@
     font-size: 18px;
     padding: 5px;
     margin: 0;
+    color: #6e717c; 
   }
   .thecoolbox .learnMoreBtn p {
     padding-bottom: 0;
@@ -68,7 +71,7 @@
     bottom: -4px;
     left: 0;
     right: 0;
-    transition: all 0.4s linear;
+    transition: all 0.2s linear;
     margin-bottom: 10px;
   }
   .thecoolbox:hover .learnMoreBtn {
