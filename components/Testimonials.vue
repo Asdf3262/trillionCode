@@ -52,10 +52,14 @@
     },
     methods: {
       onClickNext: function () {
-        this.currentPage += 1
+        if (this.currentPage < 50) {
+          this.currentPage += 1
+        }
       },
       onClickPrevious: function () {
-        this.currentPage -= 1
+        if (this.currentPage > 1) {
+          this.currentPage -= 1
+        }
       }
     },
     props: {
