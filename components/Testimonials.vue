@@ -24,8 +24,8 @@
         </b-container>
       </div>
       <div class="nav">
-        <button @click="onClickPrevious"><</button>
-        <button @click="onClickNext">></button>
+        <button @click="onClickPrevious" :class="isBottomLimit()"><</button>
+        <button @click="onClickNext" :class="isTopLimit()">></button>
       </div>
     </div>
     <div class="logos">
@@ -59,6 +59,16 @@
       onClickPrevious: function () {
         if (this.currentPage > 1) {
           this.currentPage -= 1
+        }
+      },
+      isTopLimit: function () {
+        if ( this.currentPage == 50) {
+          return 'limit';
+        }
+      },
+      isBottomLimit: function () {
+        if (this.currentPage == 1) {
+          return 'limit';
         }
       }
     },
@@ -136,6 +146,9 @@
     color: #fff;
     font-size: 20px;
     padding: 10px;
+  }
+  .nav .limit {
+      display: none;
   }
   .logos {
     display: flex;
